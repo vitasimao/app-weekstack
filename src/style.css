@@ -1,0 +1,50 @@
+@import "tailwindcss";
+/* Esta línea le enseña a Tailwind v4 a responder cuando la clase .dark está activa */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-brand-dark: #D7D7D7;
+  --color-brand-orange: #FF6B00;
+  --color-brand-muted: #9CA3AF;
+  --color-brand-light: #F9FAFB;
+
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  --animate-fade-in: fadeIn 0.15s ease-out forwards;
+  --animate-scale-in: scaleIn 0.12s ease-out forwards;
+}
+
+body {
+  background-color: var(--color-brand-dark);
+  color: #111827;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+/* Scrollbar sutil para el contenedor del teléfono */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #E5E7EB;
+  border-radius: 9999px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #FF6B00;
+}
